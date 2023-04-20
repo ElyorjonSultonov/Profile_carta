@@ -1,0 +1,147 @@
+@import url("https://fonts.googleapis.com/css2?family=Chivo+Mono:wght@100;200;300;400;500;600;700;800;900&family=Open+Sans:wght@300;400;500;600;700;800&display=swap");
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Chivo Mono", monospace;
+}
+
+body {
+  background-image: url("./img/31213.webp");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.card {
+  position: relative;
+  width: 550px;
+  height: 300px;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border-radius: 20px;
+  box-shadow: 0 25px 25px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  border-top: 1px solid rgb(0, 136, 255);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 11;
+  transition: all 0.4s linear;
+}
+
+.card .content {
+  position: relative;
+  display: flex;
+  align-items: center;
+  margin-top: -70px;
+  gap: 20px;
+}
+.card::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 80px;
+  background: rgb(0, 174, 255);
+}
+
+.card:hover {
+  transform: scale(1.2);
+}
+
+.card .content .imgBox {
+  position: relative;
+  width: 120px;
+  height: 120px;
+  overflow: hidden;
+  border-radius: 50%;
+  box-shadow: 0 0 0 10px rgba(0, 13, 252, 0.1);
+  animation: animateImgBox 7s linear forwards infinite;
+}
+
+.card .content .imgBox:hover {
+  animation: none;
+}
+
+@keyframes animateImgBox {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.card .content .imgBox img {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.card .content .details {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  color: blue;
+}
+
+.card .content .details div {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.card .content .details i {
+  font-size: 24px;
+  transition: all 0.4s linear;
+}
+
+.card .content .number,
+.message {
+  animation: animateIcons 3s linear forwards infinite;
+}
+
+@keyframes animateIcons {
+  from {
+    transform: rotate3d(0, 0, 1, 0deg);
+  }
+  20%,
+  32%,
+  44%,
+  56%,
+  68% {
+    transform: rotate3d(0, 0, 1, 0deg);
+  }
+  23%,
+  35%,
+  47%,
+  59%,
+  71% {
+    transform: rotate3d(0, 0, 1, 15deg);
+  }
+  26%,
+  38%,
+  50%,
+  62%,
+  74% {
+    transform: rotate3d(0, 0, 1, 0deg);
+  }
+  29%,
+  41%,
+  53%,
+  65%,
+  77% {
+    transform: rotate3d(0, 0, 1, -15deg);
+  }
+
+  80% {
+    transform: rotate3d(0, 0, 1, 0deg);
+  }
+}
